@@ -4,6 +4,7 @@ const defaultconfig=require('./defaultconfig');
 const path=require('path');
 const jsonreader=require('./jsonReader/jreader').readJson;
 const interfacepool=require('./jsonReader/jreader').interfacepool;
+const refreshdata=require('./jsonReader/jreader').refreshdata
 const j2i =(obj)=>{
 
     let config=getConfig();
@@ -20,6 +21,7 @@ const anylizeJson = (filename,json)=>
     jsonreader(content,filename);
     //console.log(interfacepool);
     let interfacecontent=makeInterfaceInerface(interfacepool);
+    refreshdata();
     return interfacecontent;
 
 }
@@ -44,7 +46,9 @@ makeInterfaceInerface=(interfacepool)=>{
         //console.log(interfacestr);
         
     });
-    result+=`\n export {${exportname.join(',')}}`
+    result+=`\n export {${exportname.join(',')}}`;
+    //清空interfacepool
+    
     return result
 
 }

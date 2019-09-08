@@ -1,3 +1,5 @@
+const nameIndex=require('./nameIndex');
+
 const readJson = (json,withname)=>{
     //console.log(json);
     //console.log(withname);
@@ -59,12 +61,17 @@ const getType=(content)=>{
 }
 const interfacepool=[];
 
-let index=0;
 const getInterfaceIndex=()=>{
-    return index++;
+    return nameIndex.index;
 }
 module.exports={
     readJson,
-    interfacepool
+    interfacepool,
+    refreshdata:()=>{
+        while(interfacepool.length)
+        {
+            interfacepool.pop();
+        }
+    }
 };
 
