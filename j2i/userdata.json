@@ -1,0 +1,14 @@
+{
+    "apiname":"getusername",
+    "code":"123",
+    "result":{
+        "code":"123",
+        "data":{
+            "username":"shincat",
+            "userinfo":"from changzhou",
+            "userage":"30",
+            "list":[1,2,3,4]
+        }
+    },
+    "history":[1,2,3,4,5]
+}
