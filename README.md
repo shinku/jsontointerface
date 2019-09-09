@@ -2,7 +2,7 @@
 convert json data to interface files；  
 writen by @shincat.
 ### despection
-这是一个工具，主要用于typescript项目中，当后端返回的数据接口比较复杂。省去了一个一个去写interface的步骤。
+这是一个工具，主要用于typescript项目中，当后端返回的数据接口比较复杂时，省去了一个一个去写interface的步骤，而是直接根据后端返回的数据结构，遍历生成包含各个数据接口的interface描述，并保存为对应的ts文件。具体描述如下
 
 #### install
 ```

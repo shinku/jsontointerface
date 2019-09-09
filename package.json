@@ -1,18 +1,40 @@
 {
   "name": "json2interface",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "parse json to interface files of typescript",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "shin",
+  "email": "jsgxx00@yeah.net",
+  "license": "MIT",
   "devDependencies": {
     "jest": "^24.9.0"
   },
-  "Keywords":["shin","json","typescript"],
+  "Keywords": [
+    "shin",
+    "json",
+    "typescript"
+  ],
   "bin": {
     "j2i": "index.js"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinku/jsontointerface.git"
+  },
+  "keywords": [
+    "shin",
+    "shincat",
+    "typescript"
+  ],
+  "bugs": {
+    "url": "https://github.com/shinku/jsontointerface/issues"
+  },
+  "homepage": "https://github.com/shinku/jsontointerface#readme"
 }
