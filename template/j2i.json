@@ -1,7 +1,10 @@
+
 {
     "files":{
         "filepath":"j2i",
         "filepathto":"D"
+    },
+    "options":{
+        "readonly":true
     }
-  
 }

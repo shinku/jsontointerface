@@ -4,22 +4,29 @@ const defaultconfig=require('./defaultconfig');
 const path=require('path');
 const jsonreader=require('./jsonReader/jreader').readJson;
 const interfacepool=require('./jsonReader/jreader').interfacepool;
-const refreshdata=require('./jsonReader/jreader').refreshdata
-const j2i =(obj)=>{
+const refreshdata=require('./jsonReader/jreader').refreshdata;
+let option = {
 
+}
+const j2i =()=>{
+    //console.log(process.cwd())
     let config=getConfig();
+   
     const {
         filepath,
         filepathto
     }=config.files;
-    return readFileList(filepath,filepath,filepathto);
-
+    const {options}=config;
+   
+    option=Object.assign(option,options);
+    
+    readFileList(filepath,filepath,filepathto);
+    
 }
 const anylizeJson = (filename,json)=>
 {
     const content= JSON.parse(json);
-    jsonreader(content,filename);
-    //console.log(interfacepool);
+    jsonreader(content,filename);   
     let interfacecontent=makeInterfaceInerface(interfacepool);
     refreshdata();
     return interfacecontent;
@@ -31,7 +38,7 @@ makeInterfaceInerface=(interfacepool)=>{
     function readPros(pros){
         let str="\n";
         pros.forEach((item)=>{
-            str+=`       ${item.key}?:${item['type']}\n`;
+            str+=`   ${option.readonly==true?'readonly ':""}${item.key}?:${item['type']};\n`;
         });
         return str;
     }
@@ -68,8 +75,10 @@ const readFileList=(folderpath,filepath,filepathto)=>{
         const outputfilepath=path.resolve(filepathto,iname);
 
         const outfileconent=anylizeJson(item,filecontent);
+        console.log('write file to ',outputfilepath);
         fs.writeFileSync(outputfilepath,outfileconent);
-    })   
+    });
+    console.log('j2i parse over');   
 }
 const getConfig= ()=>{
     const appfile=process.cwd();

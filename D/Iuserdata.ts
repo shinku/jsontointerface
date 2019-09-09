@@ -1,18 +1,18 @@
 interface Iuserdata {
-       apiname?:string
-       code?:string
-       result?:IData3
-       history?:Array<number>
+   readonly apiname?:string;
+   readonly code?:string;
+   readonly result?:IData0;
+   readonly history?:Array<number>;
 };
-interface IData3 {
-       code?:string
-       data?:IData4
+interface IData0 {
+   readonly code?:string;
+   readonly data?:IData1;
 };
-interface IData4 {
-       username?:string
-       userinfo?:string
-       userage?:string
-       list?:Array<number>
+interface IData1 {
+   readonly username?:string;
+   readonly userinfo?:string;
+   readonly userage?:string;
+   readonly list?:Array<number>;
 };
 
- export {Iuserdata,IData3,IData4}
+ export {Iuserdata,IData0,IData1}
