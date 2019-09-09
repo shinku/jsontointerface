@@ -15,7 +15,6 @@ else if(process.argv.length==3)
 {
     //获取命令
     const cammand=process.argv[2];
-    console.log(cammand);
     switch(cammand)
     {
         //初始化；创建配置文件和目录

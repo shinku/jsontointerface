@@ -40,7 +40,7 @@ j2i.json 为json2interface的配置文件
 |  关键字段   | 类型  |  描述 |
 |  ----  | ----  |  ----   |
 |filepath  | 需要解析的json方式的目录 |   默认为j2i，建议保持默认，字符串  |
-| filepathto  | interface 文件放置的位置 |  字符串   |
+| filepathto  | interface 文件放置的位置 |  字符串,一个名叫userdata.json 将会在这个目录下编译成 Iuserdata.ts  的文件 |
 |  readonly  | 是否将interface 个各个字段描述为readonly| 默认为true，都为“只可读”|
 
 #### sample
