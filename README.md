@@ -1,4 +1,4 @@
-### json2interface
+### jsontointerface
 convert json data to interface files；  
 writen by @shincat.
 ### despection
@@ -12,6 +12,8 @@ npm install --save-dev jsontointerface
 #### init初始化
 ```
  j2i init
+ 或者
+ npx j2i init
 ```
 然后在你的项目目录下就会出现一个 ```j2i.json``` 的配置文件;  
 和一个```j2i```的目录，
@@ -67,15 +69,20 @@ j2i.json 为json2interface的配置文件
 之后直接运行
 ```
 j2i
+或者
+npx j2i
 ```
 根据以上```j2i.json```的配置文件的配置项，将在```D```目录下生成一个
 ```Iuserdata.ts```的文件。这个文件的内容为：
 ```typescript
-interface Iuserdata {
+interface Ickindex {
    readonly apiname?:string;
    readonly code?:string;
    readonly result?:IData0;
-   readonly history?:Array<number>;
+   readonly history?:Array<IData2>;
+};
+interface IData2 {
+   readonly time?:string;
 };
 interface IData0 {
    readonly code?:string;
@@ -85,9 +92,9 @@ interface IData1 {
    readonly username?:string;
    readonly userinfo?:string;
    readonly userage?:string;
-   readonly list?:Array<number>;
+   readonly list?:Array<string>;
 };
 
- export {Iuserdata,IData0,IData1}
+ export {Ickindex,IData2,IData0,IData1}
  ```
 之后你就可以愉快的在你的typescript中import 这些文件，在编译器中方便的获取对象属性啦。

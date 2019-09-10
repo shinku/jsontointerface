@@ -1,6 +1,6 @@
 {
-  "name": "json2interface",
-  "version": "1.0.3",
+  "name": "jsontointerface",
+  "version": "2.0.0",
   "description": "parse json to interface files of typescript",
   "main": "index.js",
   "scripts": {
