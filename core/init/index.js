@@ -6,7 +6,8 @@ const defaultjson=
         "filepathto":"D"
     },
     "options":{
-        "readonly":true
+        "readonly":true,
+        "toD":true
     }
 }
 `

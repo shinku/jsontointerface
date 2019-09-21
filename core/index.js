@@ -71,7 +71,7 @@ const readFileList=(folderpath,filepath,filepathto)=>{
 
         const filecontent=fs.readFileSync(path.resolve(filepath,item),{encoding:'utf-8'});
         //console.log(filecontent);
-        const iname="I"+item.split(".")[0]+".ts";
+        const iname="I"+item.split(".")[0]+(option.toD==true?".d":"")+".ts";
         const outputfilepath=path.resolve(filepathto,iname);
 
         const outfileconent=anylizeJson(item,filecontent);

@@ -19,10 +19,11 @@ npm install --save-dev jsontointerface
 和一个```j2i```的目录，
 目录的大致结构  
 ```
-+++ j2i/
-+++ node_modules/
-+++ package.json
-+++ j2i.json
+-root--
+    |- j2i/
+    |- node_modules/
+    |- package.json
+    |- j2i.json
 ```
 j2i.json 为json2interface的配置文件
 数据结构为：
@@ -34,16 +35,18 @@ j2i.json 为json2interface的配置文件
         "filepathto":"D"
     },
     "options":{
-        "readonly":true
+        "readonly":true,
+        "toD":true
     }
 }
 
 ```
-|  关键字段   | 类型  |  描述 |
+|  关键字段   | 描述  |  备注 |
 |  ----  | ----  |  ----   |
 |filepath  | 需要解析的json方式的目录 |   默认为j2i，建议保持默认，字符串  |
-| filepathto  | interface 文件放置的位置 |  字符串,一个名叫userdata.json 将会在这个目录下编译成 Iuserdata.ts  的文件 |
+| filepathto  | ts的interface 文件放置的位置 |  字符串,一个名叫userdata.d.json 将会在这个目录下编译成 Iuserdata.ts  的文件 |
 |  readonly  | 是否将interface 个各个字段描述为readonly| 默认为true，都为“只可读”|
+|toD|是否保存为“.d.ts”后缀文件|默认为true
 
 #### sample
 有一个名为 ```username.json```的json文件，数据结构为：
@@ -73,7 +76,7 @@ j2i
 npx j2i
 ```
 根据以上```j2i.json```的配置文件的配置项，将在```D```目录下生成一个
-```Iuserdata.ts```的文件。这个文件的内容为：
+```Iuserdata.d.ts```的文件。这个文件的内容为：
 ```typescript
 interface Ickindex {
    readonly apiname?:string;
