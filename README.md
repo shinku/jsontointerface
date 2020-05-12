@@ -98,6 +98,6 @@ interface IData1 {
    readonly list?:Array<string>;
 };
 
- export {Ickindex,IData2,IData0,IData1}
+ export type {Ickindex,IData2,IData0,IData1}
  ```
 之后你就可以愉快的在你的typescript中import 这些文件，在编译器中方便的获取对象属性啦。

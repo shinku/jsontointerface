@@ -53,7 +53,7 @@ makeInterfaceInerface=(interfacepool)=>{
         //console.log(interfacestr);
         
     });
-    result+=`\n export {${exportname.join(',')}}`;
+    result+=`\n export type {${exportname.join(',')}}`;
     //清空interfacepool
     
     return result
